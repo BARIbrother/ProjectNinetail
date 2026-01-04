@@ -3,18 +3,52 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "GeuSeunSaeBrain", menuName = "Scriptable Objects/GeuSeunSaeBrain")]
 public class GeuSeunSaeBrain : EnemyBrain
 {
-    public override void Decide()
+    IEnemyBehavior current;
+    OrbitalBehavior orbit;
+    RangeHItScanBehavior attack;
+    float sinceLastAttack;
+
+    public override void Init(Enemy e, EnemyRuntime er)
     {
-        throw new System.NotImplementedException();
+        base.Init(e, er);
+        orbit = new OrbitalBehavior();
+        attack = new RangeHItScanBehavior();
+
+        orbit.Enter(enemy, runtime, this);
+        current = orbit;
+
+        sinceLastAttack = 0f;
     }
 
     public override void Tick()
     {
-        throw new System.NotImplementedException();
+        current.Tick();
+        sinceLastAttack += Time.deltaTime;
+        if(current == orbit && canAttack()) ChangeToAttack();
+        if(current == attack && attack.attackFinished) ChangeToOrbit();
     }
 
-    public override void UpdateState()
+    public void ChangeToOrbit()
     {
-        throw new System.NotImplementedException();
+        sinceLastAttack = 0f;
+        current = orbit;
+        orbit.Enter(enemy, runtime, this);
     }
+
+    bool canAttack()
+    {
+        if(sinceLastAttack >= enemy.info.atkinterval && Vector3.Distance(enemy.player.transform.position, enemy.transform.position) < enemy.info.atkrange)
+        {
+            Debug.Log("player detected. changing to attack.");
+            return true;
+        }
+        else return false;
+    }
+
+    public void ChangeToAttack()
+    {
+        current = attack;
+        attack.Enter(enemy, runtime, this);
+    }
+
 }
