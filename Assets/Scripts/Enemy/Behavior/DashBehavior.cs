@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class RangeHItScanBehavior: IEnemyBehavior
+public class DashBehavior: IEnemyBehavior
 {
-    
+
     Enemy enemy;
     EnemyRuntime runtime;
     EnemyBrain brain;
@@ -16,6 +16,9 @@ public class RangeHItScanBehavior: IEnemyBehavior
 
     AttackArea attackArea;
     AttackPreview attackPreview;
+
+    bool alreadyHit = false;
+
 
     public void Enter(Enemy e, EnemyRuntime r, EnemyBrain b)
     {
@@ -52,14 +55,31 @@ public class RangeHItScanBehavior: IEnemyBehavior
         {
             Ticktimer = 0;
             ast = AttackState.Attacking;
+            GenerateAttackArea();
         }
     }
+
     void TickAttack()
     {
-        GenerateAttackArea();
-        CheckHit();
-        ast = AttackState.After;
+        if(!alreadyHit) CheckHit();
+        Vector3 pos = enemy.transform.position;
+
+
+        enemy.transform.position = Vector3.MoveTowards(
+            pos,
+            pos + attackDir * 2f,
+            Time.deltaTime * 10f
+        );
+
+        Ticktimer += Time.deltaTime;
+        if(Ticktimer > 0.2f)
+        {
+            Ticktimer = 0;
+            ast = AttackState.After;
+            desAttackArea();
+        }
     }
+
     void TickAfter()
     {
         Ticktimer += Time.deltaTime;
@@ -76,7 +96,7 @@ public class RangeHItScanBehavior: IEnemyBehavior
         Vector3 playerPos = enemy.player.transform.position;
 
         attackDir = (playerPos - selfPos).normalized;
-        attackCenter = selfPos + 0.5f * 6f * attackDir;
+        attackCenter = selfPos + 0.5f * 2f * attackDir;
     }
 
     void GenerateAttackPreview()
@@ -90,15 +110,19 @@ public class RangeHItScanBehavior: IEnemyBehavior
     {
         attackArea = Object.Instantiate(enemy.info.AttackArea).GetComponent<AttackArea>();
         attackArea.SetPosition(attackCenter,  Mathf.Atan2(attackDir.y, attackDir.x) * Mathf.Rad2Deg);
-       
     }
 
     void CheckHit()
     {
         if(attackArea.isHitPlayer())
         {
-            Debug.Log("Geuseunsae Hit player"); // damage logic later
+            alreadyHit = true;
+            Debug.Log("Changgwi Hit player"); // damage logic later
         }
+    }
+
+    void desAttackArea()
+    {
         attackArea.des();
     }
 }

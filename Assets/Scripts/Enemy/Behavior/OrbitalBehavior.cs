@@ -92,8 +92,6 @@ public class OrbitalBehavior : IEnemyBehavior
     void MoveTowards(Vector3 Target)
     {
         Vector3 pos = enemy.transform.position;
-        Vector3 dir = Target - pos;
-
 
         enemy.transform.position = Vector3.MoveTowards(
             pos,
