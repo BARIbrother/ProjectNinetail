@@ -6,9 +6,6 @@ public class RangeHItScanBehavior: IEnemyBehavior
     Enemy enemy;
     EnemyRuntime runtime;
     EnemyBrain brain;
-
-    enum AttackState {Before, Attacking, After};
-    AttackState ast;
     public float Ticktimer;
     public bool attackFinished;
     public Vector3 attackDir;
@@ -23,7 +20,7 @@ public class RangeHItScanBehavior: IEnemyBehavior
         runtime = r;
         brain = b;
         attackFinished = false;
-        ast = AttackState.Before;
+        runtime.currentAction = EnemyRuntime.EnemyAction.AttackBefore;
         Ticktimer = 0f;
         SetTarget();
         GenerateAttackPreview();
@@ -31,15 +28,15 @@ public class RangeHItScanBehavior: IEnemyBehavior
 
     public void Tick()
     {
-        switch(ast)
+        switch(runtime.currentAction)
         {
-            case AttackState.Before:
+            case EnemyRuntime.EnemyAction.AttackBefore:
                 TickBefore();
                 break;
-            case AttackState.Attacking:
+            case EnemyRuntime.EnemyAction.AttackPerforming:
                 TickAttack();
                 break;
-            case AttackState.After:
+            case EnemyRuntime.EnemyAction.AttackAfter:
                 TickAfter();
                 break;
         }
@@ -51,14 +48,14 @@ public class RangeHItScanBehavior: IEnemyBehavior
         if(Ticktimer > enemy.info.atkBeforeDelay)
         {
             Ticktimer = 0;
-            ast = AttackState.Attacking;
+            runtime.currentAction = EnemyRuntime.EnemyAction.AttackPerforming;
         }
     }
     void TickAttack()
     {
         GenerateAttackArea();
         CheckHit();
-        ast = AttackState.After;
+        runtime.currentAction = EnemyRuntime.EnemyAction.AttackAfter;
     }
     void TickAfter()
     {

@@ -3,11 +3,19 @@ using UnityEngine;
 public abstract class Skill
 {
     public SkillData data;
-    public Skill(SkillData d)
+    public SkillBuff buff;
+
+    public SkillPassive passive;
+
+    public string name;
+
+    public Skill(SkillData d, SkillBuff b, SkillPassive p)
     {
-        this.data = d;
+        data = d;
+        buff = b;
+        passive = p;
     }
 
-    public abstract void Cast();
+    public abstract void CastSkill();
     public abstract void Delete();
 }

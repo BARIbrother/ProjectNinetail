@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
 
     void InitializeEnemy()
     {
+        player = GameObject.Find("Player");
         runtime = new EnemyRuntime();
         brain.Init(this, runtime);
         runtime.currentHP = info.maxhp;

@@ -7,8 +7,6 @@ public class DashBehavior: IEnemyBehavior
     EnemyRuntime runtime;
     EnemyBrain brain;
 
-    enum AttackState {Before, Attacking, After};
-    AttackState ast;
     public float Ticktimer;
     public bool attackFinished;
     public Vector3 attackDir;
@@ -26,7 +24,7 @@ public class DashBehavior: IEnemyBehavior
         runtime = r;
         brain = b;
         attackFinished = false;
-        ast = AttackState.Before;
+        runtime.currentAction = EnemyRuntime.EnemyAction.AttackBefore;
         Ticktimer = 0f;
         SetTarget();
         GenerateAttackPreview();
@@ -34,15 +32,15 @@ public class DashBehavior: IEnemyBehavior
 
     public void Tick()
     {
-        switch(ast)
+        switch(runtime.currentAction)
         {
-            case AttackState.Before:
+            case EnemyRuntime.EnemyAction.AttackBefore:
                 TickBefore();
                 break;
-            case AttackState.Attacking:
+            case EnemyRuntime.EnemyAction.AttackPerforming:
                 TickAttack();
                 break;
-            case AttackState.After:
+            case EnemyRuntime.EnemyAction.AttackAfter:
                 TickAfter();
                 break;
         }
@@ -54,7 +52,7 @@ public class DashBehavior: IEnemyBehavior
         if(Ticktimer > enemy.info.atkBeforeDelay)
         {
             Ticktimer = 0;
-            ast = AttackState.Attacking;
+            runtime.currentAction = EnemyRuntime.EnemyAction.AttackPerforming;
             GenerateAttackArea();
         }
     }
@@ -75,7 +73,7 @@ public class DashBehavior: IEnemyBehavior
         if(Ticktimer > 0.2f)
         {
             Ticktimer = 0;
-            ast = AttackState.After;
+            runtime.currentAction = EnemyRuntime.EnemyAction.AttackAfter;
             desAttackArea();
         }
     }

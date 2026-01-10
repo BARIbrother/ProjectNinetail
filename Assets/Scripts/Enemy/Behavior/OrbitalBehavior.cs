@@ -21,8 +21,6 @@ public class OrbitalBehavior : IEnemyBehavior
     Vector3 currtentTarget;
     float repickTimer;
 
-    enum OrbitMovingState {Moving, Waiting};
-    OrbitMovingState ms;
     float waitTimer = 0f;
     float waitDuration = 1f;
 #endregion
@@ -34,17 +32,17 @@ public class OrbitalBehavior : IEnemyBehavior
         brain = b;
         player = enemy.player.transform;
         PickNewTarget();
-        ms = OrbitMovingState.Moving;
+        runtime.currentAction = EnemyRuntime.EnemyAction.Moving;
     }
 
     public void Tick()
     {
-        switch(ms)
+        switch(runtime.currentAction)
         {
-            case OrbitMovingState.Moving:
+            case EnemyRuntime.EnemyAction.Moving:
                 TickMoving();
                 break;
-            case OrbitMovingState.Waiting:
+            case EnemyRuntime.EnemyAction.Idle:
                 TickWaiting();
                 break;
         }
@@ -55,7 +53,7 @@ public class OrbitalBehavior : IEnemyBehavior
         repickTimer += Time.deltaTime;
         if(ReachedTarget() || repickTimer > 2f)
         {
-            ms = OrbitMovingState.Waiting;
+            runtime.currentAction = EnemyRuntime.EnemyAction.Idle;
             waitTimer = 0f;
         }
         else MoveTowards(currtentTarget);
@@ -68,7 +66,7 @@ public class OrbitalBehavior : IEnemyBehavior
         if(waitTimer >= waitDuration)
         {
             PickNewTarget();
-            ms = OrbitMovingState.Moving;
+            runtime.currentAction = EnemyRuntime.EnemyAction.Moving;
         }
     }
 

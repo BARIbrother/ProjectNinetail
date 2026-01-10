@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
-
-[CreateAssetMenu(fileName = "SkillData", menuName = "Scriptable Objects/SkillData")]
 public abstract class SkillData : ScriptableObject
 {
+    public SkillBuff buff;
+    public SkillPassive passive;
     public float cooldown;
     public string strOnAddition;
     public string strOnDeletion;

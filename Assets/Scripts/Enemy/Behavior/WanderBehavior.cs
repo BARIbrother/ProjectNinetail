@@ -11,8 +11,6 @@ public class WanderBehavior: IEnemyBehavior
 #endregion
     
 #region wandering movement
-    enum WanderMovingState{Moving, Waiting};
-    WanderMovingState ms = WanderMovingState.Moving;
 
     float waitTimer = 0f;
     float waitDuration = 1f;
@@ -27,17 +25,17 @@ public class WanderBehavior: IEnemyBehavior
         runtime = r;
         brain = b;
         player = enemy.player;
-        ms = WanderMovingState.Moving;
+        runtime.currentAction = EnemyRuntime.EnemyAction.Moving;
     }
 
     public void Tick()
     {
-        switch(ms)
+        switch(runtime.currentAction)
         {
-            case WanderMovingState.Moving:
+            case EnemyRuntime.EnemyAction.Moving:
                 TickMoving();
                 break;
-            case WanderMovingState.Waiting:
+            case EnemyRuntime.EnemyAction.Idle:
                 TickWaiting();
                 break;
         }
@@ -58,7 +56,7 @@ public class WanderBehavior: IEnemyBehavior
         if(moveTimer >= moveDureation)
         {
             waitTimer = 0f;
-            ms = WanderMovingState.Waiting;
+            runtime.currentAction = EnemyRuntime.EnemyAction.Idle;
         }
     }
 
@@ -68,7 +66,7 @@ public class WanderBehavior: IEnemyBehavior
 
         if(waitTimer >= waitDuration)
         {
-            ms = WanderMovingState.Moving;
+            runtime.currentAction = EnemyRuntime.EnemyAction.Moving;
             moveTimer = 0f;
         }
     }

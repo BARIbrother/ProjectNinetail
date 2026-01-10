@@ -103,5 +103,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6454116bf41ae7b4ba4f09aa071a6bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  data: {fileID: 11400000, guid: 0676ea819e538e24aa7dc61cb9e5db1a, type: 2}
+  info: {fileID: 11400000, guid: 0676ea819e538e24aa7dc61cb9e5db1a, type: 2}
   brain: {fileID: 11400000, guid: f88e3f192c89aad428489500a9cc4269, type: 2}
+  player: {fileID: 0}

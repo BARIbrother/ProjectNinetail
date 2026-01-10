@@ -7,4 +7,6 @@ public class EnemyRuntime
     public float currentSAN;
     public int direction;
 
+    public enum EnemyAction{Idle, Moving, AttackBefore, AttackPerforming, AttackAfter};
+    public EnemyAction currentAction;
 }
