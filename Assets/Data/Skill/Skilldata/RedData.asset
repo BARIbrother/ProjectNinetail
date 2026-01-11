@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26563b834824204886e326f46be665e, type: 3}
   m_Name: RedData
   m_EditorClassIdentifier: Assembly-CSharp::RedData
+  buff: {fileID: 11400000, guid: aeb16d8f4916ee84eb1e69b6d4b904b1, type: 2}
+  passive: {fileID: 11400000, guid: edabc1d4ba5120847953b6d3d427a180, type: 2}
   cooldown: 0
   strOnAddition: red skill added
   strOnDeletion: red skill removed
