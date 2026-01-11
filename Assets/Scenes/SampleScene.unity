@@ -386,120 +386,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &769939117
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 49446751341046492, guid: 82ff18ccdc9a69644bd1d41a68ef9dbf, type: 3}
-      propertyPath: m_Name
-      value: GeuSeunSae
-      objectReference: {fileID: 0}
-    - target: {fileID: 126140044253926599, guid: 82ff18ccdc9a69644bd1d41a68ef9dbf, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 126140044253926599, guid: 82ff18ccdc9a69644bd1d41a68ef9dbf, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -4.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 126140044253926599, guid: 82ff18ccdc9a69644bd1d41a68ef9dbf, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 126140044253926599, guid: 82ff18ccdc9a69644bd1d41a68ef9dbf, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 126140044253926599, guid: 82ff18ccdc9a69644bd1d41a68ef9dbf, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 126140044253926599, guid: 82ff18ccdc9a69644bd1d41a68ef9dbf, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 126140044253926599, guid: 82ff18ccdc9a69644bd1d41a68ef9dbf, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 126140044253926599, guid: 82ff18ccdc9a69644bd1d41a68ef9dbf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 126140044253926599, guid: 82ff18ccdc9a69644bd1d41a68ef9dbf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 126140044253926599, guid: 82ff18ccdc9a69644bd1d41a68ef9dbf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 82ff18ccdc9a69644bd1d41a68ef9dbf, type: 3}
---- !u!1001 &775677515
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8335967076220983403, guid: b2099aea37d4a304ba5aa7fe3fd3619d, type: 3}
-      propertyPath: m_Name
-      value: Changgwi
-      objectReference: {fileID: 0}
-    - target: {fileID: 8668616777708373853, guid: b2099aea37d4a304ba5aa7fe3fd3619d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.06457
-      objectReference: {fileID: 0}
-    - target: {fileID: 8668616777708373853, guid: b2099aea37d4a304ba5aa7fe3fd3619d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.92
-      objectReference: {fileID: 0}
-    - target: {fileID: 8668616777708373853, guid: b2099aea37d4a304ba5aa7fe3fd3619d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8668616777708373853, guid: b2099aea37d4a304ba5aa7fe3fd3619d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8668616777708373853, guid: b2099aea37d4a304ba5aa7fe3fd3619d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8668616777708373853, guid: b2099aea37d4a304ba5aa7fe3fd3619d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8668616777708373853, guid: b2099aea37d4a304ba5aa7fe3fd3619d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8668616777708373853, guid: b2099aea37d4a304ba5aa7fe3fd3619d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8668616777708373853, guid: b2099aea37d4a304ba5aa7fe3fd3619d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8668616777708373853, guid: b2099aea37d4a304ba5aa7fe3fd3619d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b2099aea37d4a304ba5aa7fe3fd3619d, type: 3}
 --- !u!1 &1441263879
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,6 +491,7 @@ GameObject:
   - component: {fileID: 1807681164}
   - component: {fileID: 1807681166}
   - component: {fileID: 1807681165}
+  - component: {fileID: 1807681169}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -711,6 +598,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerState
   direction: 2
+  stats:
+    maxHp: 100
+    currentHp: 0
+    maxSpirit: 100
+    currentSpirit: 0
+    atkPower: 70
+    basicAtkCoeff: 0.1
+    atkRange: 1
+    atkInterval: 0.3
+    moveSpeed: 5
+    dashSpeedCoeff: 3
 --- !u!114 &1807681166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -864,6 +762,18 @@ PolygonCollider2D:
       - {x: 0.325, y: -0.955}
       - {x: 0.885, y: -0.92499995}
   m_UseDelaunayMesh: 0
+--- !u!114 &1807681169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807681161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b500c6c4bbb19a4bb001ba29c40f768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerBasicAttack
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -872,5 +782,3 @@ SceneRoots:
   - {fileID: 1441263881}
   - {fileID: 1807681163}
   - {fileID: 480658839}
-  - {fileID: 769939117}
-  - {fileID: 775677515}

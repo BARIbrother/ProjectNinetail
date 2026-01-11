@@ -1,12 +1,13 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(PlayerState))]
-[RequireComponent(typeof(Rigidbody2D))]
+//[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerBasicAttack : MonoBehaviour
 {
     private PlayerState playerState;
-    private Rigidbody2D rb;
+    //private Rigidbody2D rb;
     private Camera mainCam;
 
     [Header("Combo Settings")]
@@ -23,7 +24,7 @@ public class PlayerBasicAttack : MonoBehaviour
     private void Awake()
     {
         playerState = GetComponent<PlayerState>();
-        rb = GetComponent<Rigidbody2D>();
+        //rb = GetComponent<Rigidbody2D>();
         mainCam = Camera.main;
     }
 
@@ -37,7 +38,7 @@ public class PlayerBasicAttack : MonoBehaviour
 
         // 2. 공격 입력 (좌클릭)
         // 공격 중이 아니고, 공격 간격(0.3초)이 지났을 때만 가능
-        if (Input.GetMouseButtonDown(0) && !isAttacking)
+        if (Mouse.current.leftButton.wasPressedThisFrame && !isAttacking)
         {
             if (Time.time - lastInputTime >= playerState.stats.atkInterval)
             {
@@ -52,28 +53,30 @@ public class PlayerBasicAttack : MonoBehaviour
         lastInputTime = Time.time;
 
         // 마우스 방향 계산
-        Vector2 mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 attackDir = (mousePos - rb.position).normalized;
-
+        Vector3 mousePos = mainCam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        Vector3 attackDir = (mousePos - transform.position).normalized;
+        Debug.Log(attackDir);
         // --- [1] 전진 이동 (Lunge) ---
         // 속도 = 이동속도(5) * 5 = 25
         float speed = playerState.stats.moveSpeed * lungeSpeedMultiplier;
-        Vector2 startPos = rb.position;
-        Vector2 targetPos = startPos + (attackDir * lungeDistance);
+        Vector3 startPos = transform.position;
+        Vector3 targetPos = startPos + (attackDir * lungeDistance);
         
         float distance = Vector2.Distance(startPos, targetPos);
         float duration = distance / speed; // 이동에 걸리는 시간
         float elapsed = 0f;
 
-        // 짧은 시간 동안 빠르게 이동
-        while (elapsed < duration)
+        //짧은 시간 동안 빠르게 이동
+        while(elapsed < duration)
         {
-            rb.MovePosition(Vector2.Lerp(startPos, targetPos, elapsed / duration));
+            transform.position = Vector3.Lerp(
+                transform.position,
+                targetPos,
+                elapsed / duration
+            );
             elapsed += Time.deltaTime;
             yield return null;
         }
-        rb.MovePosition(targetPos); // 위치 보정
-
         // --- [2] 타격 판정 (부채꼴) ---
         CheckHit(attackDir);
 
