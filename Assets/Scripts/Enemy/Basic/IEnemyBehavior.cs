@@ -2,6 +2,6 @@ using UnityEngine;
 
 public interface IEnemyBehavior
 {
-    void Enter(Enemy enemy, EnemyRuntime runtime, EnemyBrain brain);
-    void Tick();
+    public void Enter(Enemy e, EnemyRuntime r, EnemyBrain b);
+    public void Tick();
 }

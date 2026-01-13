@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.InputSystem;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
+using Unity.VisualScripting;
 
 [RequireComponent(typeof(PlayerState))]
 //[RequireComponent(typeof(Rigidbody2D))]
@@ -38,7 +40,7 @@ public class PlayerBasicAttack : MonoBehaviour
 
         // 2. 공격 입력 (좌클릭)
         // 공격 중이 아니고, 공격 간격(0.3초)이 지났을 때만 가능
-        if (Mouse.current.leftButton.wasPressedThisFrame && !isAttacking)
+        if (Mouse.current.leftButton.wasPressedThisFrame && !isAttacking && playerState.stats.can_attack)
         {
             if (Time.time - lastInputTime >= playerState.stats.atkInterval)
             {
@@ -53,9 +55,15 @@ public class PlayerBasicAttack : MonoBehaviour
         lastInputTime = Time.time;
 
         // 마우스 방향 계산
-        Vector3 mousePos = mainCam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        Vector3 mousePos = mainCam.ScreenToWorldPoint(
+            new Vector3(
+                Mouse.current.position.ReadValue().x,
+                Mouse.current.position.ReadValue().y,
+                -Camera.main.transform.position.z
+            )
+        );
         Vector3 attackDir = (mousePos - transform.position).normalized;
-        Debug.Log(attackDir);
+        //Debug.Log(attackDir);
         // --- [1] 전진 이동 (Lunge) ---
         // 속도 = 이동속도(5) * 5 = 25
         float speed = playerState.stats.moveSpeed * lungeSpeedMultiplier;
@@ -110,7 +118,7 @@ public class PlayerBasicAttack : MonoBehaviour
         {
             // 자기 자신 제외 및 Enemy 태그 확인
             if (hit.gameObject == gameObject) continue;
-            // if (!hit.CompareTag("Enemy")) continue; // 태그 설정 시 주석 해제
+           if (!hit.CompareTag("Enemy")) continue; // 태그 설정 시 주석 해제
 
             // 2. 부채꼴 각도 체크
             Vector2 dirToTarget = (hit.transform.position - transform.position).normalized;
@@ -124,6 +132,7 @@ public class PlayerBasicAttack : MonoBehaviour
                 
                 // 적 스크립트의 TakeDamage 함수 호출 예시:
                 // hit.GetComponent<Enemy>()?.TakeDamage(damage);
+                hit.GetComponent<Damageable>()?.TakePhysicalDamage(damage);
             }
         }
     }

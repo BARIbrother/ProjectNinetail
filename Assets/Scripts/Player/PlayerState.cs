@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerState : MonoBehaviour
@@ -22,6 +23,11 @@ public class PlayerState : MonoBehaviour
         [Header("Movement")]
         public float moveSpeed = 5.0f;     // 이동 속도
         public float dashSpeedCoeff = 3.0f;// 정기흡수 속도 계수
+
+        [Header("availables")]
+        public bool can_move = true;
+        public bool can_attack = true;
+        public bool can_cast = true;
 
         // 평타 데미지 계산 도우미
         public float GetBasicDamage()
