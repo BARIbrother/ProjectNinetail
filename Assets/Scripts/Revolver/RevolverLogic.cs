@@ -15,7 +15,7 @@ public class RevolverLogic : MonoBehaviour
     {
         if(Keyboard.current.digit1Key.wasPressedThisFrame)
         {
-            InsertNewSkill(skilldatas[0].CreateSkill());
+            InsertNewSkill(skilldatas[1].CreateSkill());
         }
     }
 
@@ -32,7 +32,7 @@ public class RevolverLogic : MonoBehaviour
             skills[i] = skills[i-1];
         }
         skills[0] = s;
-        Debug.Log(s.data.strOnAddition);
+        //Debug.Log(s.data.strOnAddition);
     }
 
     public void revolve()

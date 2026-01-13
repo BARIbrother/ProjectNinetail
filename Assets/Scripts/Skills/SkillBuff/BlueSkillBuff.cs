@@ -1,12 +1,12 @@
-using System.Collections;
 using UnityEngine;
-[CreateAssetMenu(fileName = "RedBuff", menuName = "Scriptable Objects/RedSkillBuff")]
-public class RedSkillBuff: SkillBuff
-{
+using System.Collections;
 
+[CreateAssetMenu(fileName = "BlueBuff", menuName = "Scriptable Objects/SkillBuff/BlueSkillBuff")]
+public class BlueSkillBuff: SkillBuff
+{
     public override void ApplyBuff(Skill original, GameObject user)
     {
-        Debug.Log("red skillbuff applied");
+        //Debug.Log("red skillbuff applied");
         CoroutineRunner.Instance.StartCoroutine(SpeedBuff(user));
     }
 

@@ -5,15 +5,18 @@ public class PlayerCaster : MonoBehaviour
 {
     public GameObject revolver_object;
     public RevolverLogic revolver;
+
+    public PlayerState playerState;
     void Start()
     {
         revolver = revolver_object.GetComponent<RevolverLogic>();
+        playerState = GetComponent<PlayerState>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Keyboard.current.spaceKey.wasPressedThisFrame)
+        if(Keyboard.current.spaceKey.wasPressedThisFrame && playerState.stats.can_cast)
         {
             UseCurrentSkill();
         }   

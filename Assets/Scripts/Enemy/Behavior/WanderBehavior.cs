@@ -33,7 +33,7 @@ public class WanderBehavior: IEnemyBehavior
         switch(runtime.currentAction)
         {
             case EnemyRuntime.EnemyAction.Moving:
-                TickMoving();
+                if(runtime.canMove) TickMoving();
                 break;
             case EnemyRuntime.EnemyAction.Idle:
                 TickWaiting();

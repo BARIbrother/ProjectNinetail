@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RevolverLogic
   skilldatas:
   - {fileID: 11400000, guid: f681bd8c804593e46bded5135486824c, type: 2}
+  - {fileID: 11400000, guid: ee5a66b58d0d1e147b9dd4c8c9211687, type: 2}
 --- !u!4 &480658839
 Transform:
   m_ObjectHideFlags: 0
@@ -386,6 +387,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1044350059
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 49446751341046492, guid: 82ff18ccdc9a69644bd1d41a68ef9dbf, type: 3}
+      propertyPath: m_Name
+      value: GeuSeunSae
+      objectReference: {fileID: 0}
+    - target: {fileID: 126140044253926599, guid: 82ff18ccdc9a69644bd1d41a68ef9dbf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 126140044253926599, guid: 82ff18ccdc9a69644bd1d41a68ef9dbf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 126140044253926599, guid: 82ff18ccdc9a69644bd1d41a68ef9dbf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126140044253926599, guid: 82ff18ccdc9a69644bd1d41a68ef9dbf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 126140044253926599, guid: 82ff18ccdc9a69644bd1d41a68ef9dbf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126140044253926599, guid: 82ff18ccdc9a69644bd1d41a68ef9dbf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126140044253926599, guid: 82ff18ccdc9a69644bd1d41a68ef9dbf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126140044253926599, guid: 82ff18ccdc9a69644bd1d41a68ef9dbf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126140044253926599, guid: 82ff18ccdc9a69644bd1d41a68ef9dbf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 126140044253926599, guid: 82ff18ccdc9a69644bd1d41a68ef9dbf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 82ff18ccdc9a69644bd1d41a68ef9dbf, type: 3}
 --- !u!1 &1441263879
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,6 +550,7 @@ GameObject:
   - component: {fileID: 1807681166}
   - component: {fileID: 1807681165}
   - component: {fileID: 1807681169}
+  - component: {fileID: 1807681170}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -545,7 +604,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -9154708674828771456, guid: 13e9bd82010d7d1449ea9b6be8aa53f5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -609,6 +668,9 @@ MonoBehaviour:
     atkInterval: 0.3
     moveSpeed: 5
     dashSpeedCoeff: 3
+    can_move: 1
+    can_attack: 1
+    can_cast: 1
 --- !u!114 &1807681166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -774,6 +836,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b500c6c4bbb19a4bb001ba29c40f768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerBasicAttack
+--- !u!114 &1807681170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807681161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9653548919826d4e8f838ea0b869d6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCaster
+  revolver_object: {fileID: 480658837}
+  revolver: {fileID: 0}
+  playerState: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -782,3 +859,4 @@ SceneRoots:
   - {fileID: 1441263881}
   - {fileID: 1807681163}
   - {fileID: 480658839}
+  - {fileID: 1044350059}

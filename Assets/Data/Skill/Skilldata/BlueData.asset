@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2d0ebeb810eb4d40b743abe1e273d1a, type: 3}
+  m_Name: BlueData
+  m_EditorClassIdentifier: Assembly-CSharp::BlueData
+  buff: {fileID: 11400000, guid: 36a9653ab52c1f341add2e757c695f9e, type: 2}
+  passive: {fileID: 11400000, guid: d90d36548c9d78144b6f313a822300bb, type: 2}
+  AttackArea: {fileID: 7233409211261252094, guid: 30d848c4bbf98c04bb99aab3e4a7bb7d, type: 3}
+  player: {fileID: 0}
+  cooldown: 0
+  strOnAddition: 
+  strOnDeletion: 
+  dashSpeed: 20
+  dashDistance: 2
+  roundAttackDuration: 0.3
+  pushAmount: 1.25
