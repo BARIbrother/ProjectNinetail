@@ -16,4 +16,6 @@ public class EnemyInfo : ScriptableObject
     public GameObject AttackArea;
     public GameObject AttackPreview;
 
+    [SerializeField] public DropTable dropTable;
+
 }
