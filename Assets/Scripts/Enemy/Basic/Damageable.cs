@@ -28,6 +28,11 @@ public class Damageable : MonoBehaviour
 
     void Die()
     {
+        var drops = DropManager.Roll(enemy.info.dropTable);
+        foreach(DropResult drop in drops)
+        {
+            Debug.Log(drop.item.ItemName);
+        }
         Debug.Log(gameObject.name + " died");
         Destroy(gameObject);
     }
