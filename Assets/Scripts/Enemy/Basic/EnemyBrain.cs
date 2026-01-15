@@ -12,5 +12,7 @@ public abstract class EnemyBrain: ScriptableObject
         runtime = er;
     }
     public abstract void Tick();
+
+    public abstract void WakeUp();
 }
     

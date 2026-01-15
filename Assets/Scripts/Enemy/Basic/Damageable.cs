@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Damageable : MonoBehaviour
@@ -24,9 +25,20 @@ public class Damageable : MonoBehaviour
     public void TakeSANDamage(float amount)
     {
         enemy.runtime.currentSAN -= amount;
+        if(enemy.runtime.currentSAN < 0)
+        {
+            enemy.runtime.currentAction = EnemyRuntime.EnemyAction.Charmed;
+            StartCoroutine(WakeUpAfter());
+        }
     }
 
-    void Die()
+    IEnumerator WakeUpAfter()
+    {
+        yield return new WaitForSeconds(5f);
+        enemy.brain.WakeUp();
+    }
+
+    public void Die_Charmed()
     {
         var drops = DropManager.Roll(enemy.info.dropTable);
         foreach(DropResult drop in drops)
@@ -34,6 +46,11 @@ public class Damageable : MonoBehaviour
             Debug.Log(drop.item.ItemName);
         }
         Debug.Log(gameObject.name + " died");
+        Destroy(gameObject);
+    }
+
+    public void Die()
+    {
         Destroy(gameObject);
     }
 }

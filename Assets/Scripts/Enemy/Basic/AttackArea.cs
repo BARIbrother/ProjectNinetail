@@ -20,6 +20,7 @@ public class AttackArea : MonoBehaviour
 
     public bool isHitPlayer()
     {
+        hitList.Clear();
         Physics2D.OverlapCollider(GetComponent<Collider2D>(), hitList);
         foreach(Collider2D c in hitList)
         {
@@ -33,15 +34,26 @@ public class AttackArea : MonoBehaviour
 
     public void checkHitEnemies()
     {
+        hitList.Clear();
         Physics2D.OverlapCollider(GetComponent<Collider2D>(), hitList);
         foreach(Collider2D c in hitList)
         {
             if(c.gameObject.CompareTag("Enemy"))
             {
-                Debug.Log(c.gameObject.transform.position);
-                Debug.Log(gameObject.transform.position);
                 hitEnemies.Add(c.gameObject);
             }
+        }
+    }
+
+    public void damageToHitEnemy(float Pamount, float Samount)
+    {
+        checkHitEnemies();
+        foreach(GameObject e in hitEnemies)
+        {
+            
+            if(e != null)e.GetComponent<Damageable>().TakePhysicalDamage(Pamount);
+            if(e != null)e.GetComponent<Damageable>().TakeSANDamage(Samount);
+            if(e != null)Debug.Log(e.name + " took " + Pamount + "," + Samount + "damage");
         }
     }
 

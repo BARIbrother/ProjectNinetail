@@ -17,6 +17,10 @@ public class RevolverLogic : MonoBehaviour
         {
             InsertNewSkill(skilldatas[1].CreateSkill());
         }
+        if(Keyboard.current.digit2Key.wasPressedThisFrame)
+        {
+            InsertNewSkill(skilldatas[2].CreateSkill());
+        }
     }
 
     void InsertNewSkill(Skill s)

@@ -17,9 +17,14 @@ MonoBehaviour:
   AttackArea: {fileID: 7233409211261252094, guid: 30d848c4bbf98c04bb99aab3e4a7bb7d, type: 3}
   player: {fileID: 0}
   cooldown: 0
+  dmgCoeff: 0.75
+  SANdmgCoeff: 0.75
   strOnAddition: 
   strOnDeletion: 
   dashSpeed: 20
-  dashDistance: 2
+  dashDistance: 3
   roundAttackDuration: 0.3
   pushAmount: 1.25
+  BuffDuration: 3
+  MovementSpeedCoeff: 1.5
+  PssiveAtkSpeedCoeff: 0

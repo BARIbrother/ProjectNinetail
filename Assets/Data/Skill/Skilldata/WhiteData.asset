@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd880f099f514e64f8c7ec9211cbaade, type: 3}
+  m_Name: WhiteData
+  m_EditorClassIdentifier: Assembly-CSharp::WhiteData
+  buff: {fileID: 11400000, guid: e30c36273cc246949819b23937a51e47, type: 2}
+  passive: {fileID: 11400000, guid: 707eaf375aaa433499fed83b5505c5e6, type: 2}
+  AttackArea: {fileID: 9038857152111864074, guid: 571bffa13d9e25f41b6de178c395185b, type: 3}
+  player: {fileID: 0}
+  cooldown: 0
+  dmgCoeff: 0.5
+  SANdmgCoeff: 0.75
+  strOnAddition: 
+  strOnDeletion: 
+  DotdmgCoeff: 0.1
+  DotSANdmgCoeff: 0.1
+  DotDuration: 3
+  DotInterval: 0.5
+  AtkRange: 5
+  S_dmgCoeff: 2
+  P_addCoeff: 0.01
