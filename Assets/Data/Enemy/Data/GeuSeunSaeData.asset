@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42d04c9b627049342bcd77ada24c0061, type: 3}
   m_Name: GeuSeunSaeData
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  maxhp: 70
-  maxSAN: 50
-  atkpower: 0
+  maxhp: 40
+  maxSAN: 25
+  atkpower: 10
   defpower: 0
-  speed: 1.3
+  speed: 7
   atkrange: 6
-  atkBeforeDelay: 0.7
-  atkAfterDelay: 0.3
-  atkinterval: 1
+  atkBeforeDelay: 0.5
+  atkAfterDelay: 0.5
+  atkinterval: 2
   AttackArea: {fileID: 7896010163085585047, guid: 5711c491cfe0ecd49af0a665cae68cd9, type: 3}
   AttackPreview: {fileID: 8281876191633499001, guid: e0cc2641d83ed8e499cdbbc11f352005, type: 3}
   dropTable: {fileID: 11400000, guid: 043ff29ce4a27954497a74c4d18858fa, type: 2}

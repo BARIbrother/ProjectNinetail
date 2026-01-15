@@ -28,6 +28,13 @@ public class GeuSeunSaeBrain : EnemyBrain
         if(current == attack && attack.attackFinished) ChangeToOrbit();
     }
 
+    public override void WakeUp()
+    {
+        ChangeToOrbit();
+        runtime.currentSAN = enemy.info.maxSAN;
+        runtime.currentAction = EnemyRuntime.EnemyAction.Idle;
+    }
+
     public void ChangeToOrbit()
     {
         sinceLastAttack = 0f;

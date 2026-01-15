@@ -9,6 +9,6 @@ public class EnemyRuntime
 
     public bool canMove = true;
 
-    public enum EnemyAction{Idle, Moving, AttackBefore, AttackPerforming, AttackAfter};
+    public enum EnemyAction{Idle, Moving, AttackBefore, AttackPerforming, AttackAfter, Charmed};
     public EnemyAction currentAction;
 }

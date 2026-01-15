@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42d04c9b627049342bcd77ada24c0061, type: 3}
   m_Name: ChanggwiData
   m_EditorClassIdentifier: Assembly-CSharp::EnemyInfo
-  maxhp: 120
-  maxSAN: 80
-  atkpower: 0
+  maxhp: 60
+  maxSAN: 40
+  atkpower: 15
   defpower: 0
-  speed: 0.8
+  speed: 4
   atkrange: 3
-  atkBeforeDelay: 0.3
-  atkAfterDelay: 0.3
-  atkinterval: 2
+  atkBeforeDelay: 0.5
+  atkAfterDelay: 1
+  atkinterval: 3
   AttackArea: {fileID: 3190342220177483597, guid: 22f6bcb0c8e29bb45a0cf0b6c8493517, type: 3}
   AttackPreview: {fileID: 2407243574950415686, guid: e3cc47f78f119b846b02c8b5743a542b, type: 3}
+  dropTable: {fileID: 0}

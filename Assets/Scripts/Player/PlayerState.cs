@@ -20,6 +20,11 @@ public class PlayerState : MonoBehaviour
         public float atkRange = 1.0f;      // 평타 사거리 (1 Unit)
         public float atkInterval = 0.3f;   // 평타 딜레이
 
+        [Header("Absorption")]
+        public float AbsorbCooldown = 5f;
+        public float AbsorbRange = 4f;
+        public float dashSpeed = 5f;
+
         [Header("Movement")]
         public float moveSpeed = 5.0f;     // 이동 속도
         public float dashSpeedCoeff = 3.0f;// 정기흡수 속도 계수

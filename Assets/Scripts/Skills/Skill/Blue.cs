@@ -46,8 +46,9 @@ public class Blue: Skill
         //round attack
         AttackArea attackArea = Object.Instantiate(data.AttackArea).GetComponent<AttackArea>();
         attackArea.SetPosition(data.player.transform.position, 0f);
+        float basic = data.player.GetComponent<PlayerState>().stats.atkPower;
 
-        attackArea.checkHitEnemies();
+        attackArea.damageToHitEnemy(basic * data.dmgCoeff, basic * data.SANdmgCoeff);
         
         foreach(GameObject e in attackArea.hitEnemies)
         {

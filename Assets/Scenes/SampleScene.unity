@@ -151,6 +151,7 @@ MonoBehaviour:
   skilldatas:
   - {fileID: 11400000, guid: f681bd8c804593e46bded5135486824c, type: 2}
   - {fileID: 11400000, guid: ee5a66b58d0d1e147b9dd4c8c9211687, type: 2}
+  - {fileID: 11400000, guid: 12c728ad76b29354398311c91f5edcbc, type: 2}
 --- !u!4 &480658839
 Transform:
   m_ObjectHideFlags: 0
@@ -387,7 +388,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1044350059
+--- !u!1001 &883323083
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -401,11 +402,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 126140044253926599, guid: 82ff18ccdc9a69644bd1d41a68ef9dbf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.89
+      value: -2.48556
       objectReference: {fileID: 0}
     - target: {fileID: 126140044253926599, guid: 82ff18ccdc9a69644bd1d41a68ef9dbf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.39
+      value: 0.28942
       objectReference: {fileID: 0}
     - target: {fileID: 126140044253926599, guid: 82ff18ccdc9a69644bd1d41a68ef9dbf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -551,6 +552,7 @@ GameObject:
   - component: {fileID: 1807681165}
   - component: {fileID: 1807681169}
   - component: {fileID: 1807681170}
+  - component: {fileID: 1807681171}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -666,6 +668,9 @@ MonoBehaviour:
     basicAtkCoeff: 0.1
     atkRange: 1
     atkInterval: 0.3
+    AbsorbCooldown: 5
+    AbsorbRange: 4
+    dashSpeed: 5
     moveSpeed: 5
     dashSpeedCoeff: 3
     can_move: 1
@@ -851,6 +856,19 @@ MonoBehaviour:
   revolver_object: {fileID: 480658837}
   revolver: {fileID: 0}
   playerState: {fileID: 0}
+--- !u!114 &1807681171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807681161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4f7a509b64ee16488932807e264d78b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSpiritAbsorption
+  AttackArea: {fileID: 6836565968997590109, guid: e6399361c376b0141a3d2b067c456d09, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -859,4 +877,4 @@ SceneRoots:
   - {fileID: 1441263881}
   - {fileID: 1807681163}
   - {fileID: 480658839}
-  - {fileID: 1044350059}
+  - {fileID: 883323083}

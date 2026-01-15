@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 
 [CreateAssetMenu(fileName = "ChanggwiBrain", menuName = "Scriptable Objects/ChanggwiBrain")]
 public class Brain_Changgwi: EnemyBrain
@@ -24,6 +25,13 @@ public class Brain_Changgwi: EnemyBrain
         sinceLastAttack += Time.deltaTime;
         if(current == wander && canAttack()) ChangeToDash();
         if(current == dash && dash.attackFinished) ChangeToWander();
+    }
+
+    public override void WakeUp()
+    {
+        runtime.currentAction = EnemyRuntime.EnemyAction.Idle;
+        runtime.currentSAN = enemy.info.maxSAN;
+        ChangeToWander();
     }
 
     public void ChangeToWander()
