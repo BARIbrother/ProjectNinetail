@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8943946032421810583}
   - component: {fileID: 7853527486855251741}
   - component: {fileID: 8367892318432273254}
+  - component: {fileID: -8051118037543101846}
   m_Layer: 5
   m_Name: Entry
   m_TagString: Untagged
@@ -137,6 +138,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillInventoryEntryUI
   iconImage: {fileID: 331829791520268619}
   countText: {fileID: 55239149481790881}
+--- !u!225 &-8051118037543101846
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2648791870018301663}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &3349800824160328289
 GameObject:
   m_ObjectHideFlags: 0

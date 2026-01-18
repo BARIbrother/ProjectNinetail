@@ -16,6 +16,8 @@ public abstract class SkillData : ScriptableObject
     public string strOnDeletion;
 
     public Sprite icon;
+
+    public string SkillName;
     public abstract Skill CreateSkill();
 
     void OnEnable()
