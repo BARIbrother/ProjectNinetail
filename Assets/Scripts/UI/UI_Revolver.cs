@@ -28,7 +28,7 @@ public class SkillRevolverUI : MonoBehaviour
 
     void RotateToIndex(int index)
     {
-        float targetAngle = -ANGLE_PER_SLOT * index;
+        float targetAngle = ANGLE_PER_SLOT * index;
 
         if (rotateCoroutine != null)
             StopCoroutine(rotateCoroutine);

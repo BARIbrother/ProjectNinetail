@@ -18,38 +18,28 @@ public class RevolverLogic : MonoBehaviour
         if(Keyboard.current.digit1Key.wasPressedThisFrame)
         {
             inventory.AddSkill(skilldatas[1]);
-            InsertNewSkill(skilldatas[1].CreateSkill());
+            //InsertNewSkill(skilldatas[1], 0);
         }
         if(Keyboard.current.digit2Key.wasPressedThisFrame)
         {
             inventory.AddSkill(skilldatas[2]);
-            InsertNewSkill(skilldatas[1].CreateSkill());
+            //InsertNewSkill(skilldatas[2], 1);
+        }
+        if(Keyboard.current.pKey.wasPressedThisFrame)
+        {
+            printNames();
         }
     }
 
-    void InsertNewSkill(Skill s)
+    public void InsertSkill(SkillData d, int index)
     {
-        Skill nineth_skill = null;
-        if(skills[skills.Length-1] != null)
-        {
-            nineth_skill = skills[skills.Length-1];
-            nineth_skill.Delete();
-        } 
-        for(int i = skills.Length-1; i > 0; i --) 
-        {
-            skills[i] = skills[i-1];
-        }
-        skills[0] = s;
-        //Debug.Log(s.data.strOnAddition);
+        skills[index] = d.CreateSkill();
     }
 
     public void revolve()
     {
         
-        for(int i = 0; i < skills.Length; i ++)
-        {
-            //Debug.Log(skills[i]?.name);
-        }
+        
 
         Skill temp = skills[0];
         for(int i = 0; i < skills.Length-1; i ++)
@@ -58,6 +48,14 @@ public class RevolverLogic : MonoBehaviour
         }
         skills[skills.Length-1] = temp;
 
+    }
+
+    void printNames()
+    {
+        for(int i = 0; i < skills.Length; i ++)
+        {
+            Debug.Log(skills[i]?.name);
+        }    
     }
 
 }
