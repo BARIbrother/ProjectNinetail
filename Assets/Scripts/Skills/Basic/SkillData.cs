@@ -1,4 +1,5 @@
 using System;
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 public abstract class SkillData : ScriptableObject
 {
@@ -13,6 +14,8 @@ public abstract class SkillData : ScriptableObject
     public float SANdmgCoeff;
     public string strOnAddition;
     public string strOnDeletion;
+
+    public Sprite icon;
     public abstract Skill CreateSkill();
 
     void OnEnable()

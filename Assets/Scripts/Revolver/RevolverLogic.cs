@@ -6,6 +6,8 @@ public class RevolverLogic : MonoBehaviour
 {
     public List<SkillData> skilldatas;
     public Skill[] skills = new Skill[5];
+
+    public SkillInventory inventory;
     void Start()
     {
         
@@ -15,11 +17,13 @@ public class RevolverLogic : MonoBehaviour
     {
         if(Keyboard.current.digit1Key.wasPressedThisFrame)
         {
+            inventory.AddSkill(skilldatas[1]);
             InsertNewSkill(skilldatas[1].CreateSkill());
         }
         if(Keyboard.current.digit2Key.wasPressedThisFrame)
         {
-            InsertNewSkill(skilldatas[2].CreateSkill());
+            inventory.AddSkill(skilldatas[2]);
+            InsertNewSkill(skilldatas[1].CreateSkill());
         }
     }
 
