@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73f8f0acaef776f4fb9a62268bdf4527, type: 3}
-  m_Name: I_BlueSkill
+  m_Name: I_WhiteSkill
   m_EditorClassIdentifier: Assembly-CSharp::Itemdata
-  ItemName: blue skill
-  skilldata: {fileID: 11400000, guid: ee5a66b58d0d1e147b9dd4c8c9211687, type: 2}
+  ItemName: white skill
+  skilldata: {fileID: 11400000, guid: 12c728ad76b29354398311c91f5edcbc, type: 2}

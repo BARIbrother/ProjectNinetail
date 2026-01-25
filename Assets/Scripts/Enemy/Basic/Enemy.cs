@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public EnemyRuntime runtime; 
 
     public GameObject player;
+    public SkillInventory inventory;
     void Awake()
     {
         InitializeEnemy();
@@ -27,5 +28,6 @@ public class Enemy : MonoBehaviour
         runtime = new EnemyRuntime();
         brain.Init(this, runtime);
         runtime.currentHP = info.maxhp;
+        inventory = player.GetComponent<SkillInventory>();
     }
 }

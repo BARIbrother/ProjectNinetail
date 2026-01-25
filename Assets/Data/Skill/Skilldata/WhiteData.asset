@@ -21,6 +21,8 @@ MonoBehaviour:
   SANdmgCoeff: 0.75
   strOnAddition: 
   strOnDeletion: 
+  icon: {fileID: -3336868437009715225, guid: 1d28ef7262e68a84bb2c560d56007471, type: 3}
+  SkillName: 
   DotdmgCoeff: 0.1
   DotSANdmgCoeff: 0.1
   DotDuration: 3

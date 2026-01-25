@@ -1,9 +1,13 @@
 using System.Collections;
+using System;
 using UnityEngine;
 
 public class Damageable : MonoBehaviour
 {
     Enemy enemy;
+
+    public Action onDead;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -44,13 +48,15 @@ public class Damageable : MonoBehaviour
         foreach(DropResult drop in drops)
         {
             Debug.Log(drop.item.ItemName);
+            enemy.inventory.AddSkill(drop.item.skilldata);
         }
         Debug.Log(gameObject.name + " died");
-        Destroy(gameObject);
+        Die();
     }
 
     public void Die()
     {
+        onDead?.Invoke();
         Destroy(gameObject);
     }
 }
