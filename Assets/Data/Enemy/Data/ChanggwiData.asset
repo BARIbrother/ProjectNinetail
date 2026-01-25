@@ -23,4 +23,4 @@ MonoBehaviour:
   atkinterval: 3
   AttackArea: {fileID: 3190342220177483597, guid: 22f6bcb0c8e29bb45a0cf0b6c8493517, type: 3}
   AttackPreview: {fileID: 2407243574950415686, guid: e3cc47f78f119b846b02c8b5743a542b, type: 3}
-  dropTable: {fileID: 0}
+  dropTable: {fileID: 11400000, guid: ebb630cc89effd74e8ddfdaf098f7166, type: 2}

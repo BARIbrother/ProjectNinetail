@@ -9,6 +9,7 @@ public class UI_SkillEquipSlot : MonoBehaviour, IDropHandler
     [SerializeField] private int slotIndex;
     
     [SerializeField] private RevolverLogic revolver;
+    [SerializeField] private SkillRevolverUI revolverUI;
 
     void Start()
     {
@@ -20,8 +21,8 @@ public class UI_SkillEquipSlot : MonoBehaviour, IDropHandler
         SkillData data = revolver.skills[slotIndex].data; 
 
         iconImage.enabled = data != null;
-        //if (data != null) 
-            //iconImage.sprite = data.icon; // icon later
+        if (data != null) 
+            iconImage.sprite = data.icon; // icon later
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -33,6 +34,8 @@ public class UI_SkillEquipSlot : MonoBehaviour, IDropHandler
 
         revolver.InsertSkill(dragged.GetSkillData(), slotIndex);
         Debug.Log("skill added to " + slotIndex);
+        Refresh();
+        revolverUI.Refresh();
     }
 
     // Update is called once per frame

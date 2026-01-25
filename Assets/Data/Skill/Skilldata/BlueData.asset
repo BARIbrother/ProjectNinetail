@@ -21,6 +21,8 @@ MonoBehaviour:
   SANdmgCoeff: 0.75
   strOnAddition: 
   strOnDeletion: 
+  icon: {fileID: 21300000, guid: 580b7286e754d2a418bbc26a99ab0a9b, type: 3}
+  SkillName: 
   dashSpeed: 20
   dashDistance: 3
   roundAttackDuration: 0.3

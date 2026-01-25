@@ -4,4 +4,5 @@ using UnityEngine;
 public class Itemdata : ScriptableObject
 {
     public string ItemName;
+    public SkillData skilldata;
 }
